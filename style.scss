@@ -10,12 +10,13 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Fjalla One', sans-serif;
 }
 p {
-    font-family: 'Fjalla One', sans-serif;
+    font-family: 'Raleway', sans-serif;
+}
+.thin {
     font-family: 'Raleway', sans-serif;
 }
 .conteiner {
@@ -25,7 +26,6 @@ p {
         justify-content: space-between;
         background-color: #f8f6f6;
         padding: 20px 50px;
-        
         .logo {
             display: flex;
             align-items: center;
@@ -61,7 +61,6 @@ p {
         }
         .scroll {
             @include flex-column-center;
-
         }
     }
     .about {
@@ -69,7 +68,6 @@ p {
         background-color: #ffffff;
         gap: 30px;
         padding: 30px 10px;
-
         .heading {
             text-align: center;
             max-width: 600px;
@@ -99,7 +97,6 @@ p {
                 p {
                     font-weight: lighter;
                 }
-                
             }
         }
     }
@@ -116,7 +113,6 @@ p {
             text-align: center;
             .button {
                 .redbutton {
-
                     background-color: #e84c3d;
                     border: none;
                     color: white;
@@ -127,7 +123,6 @@ p {
                     margin: 4px 2px;
                     cursor: pointer;
                     border-radius: 2px;
-                    
                 }
             }
         }
@@ -226,7 +221,6 @@ p {
             justify-content: center;
             .progress {
                 display: flex; 
-              
                 .hr {
                     display: flex;
                     flex-direction: column;
@@ -237,7 +231,6 @@ p {
                 }
                 .container {
                     width: 100%;
-                    
                     .progress2 {
                         padding: 2px;
                         border-radius: 10px;
@@ -248,14 +241,12 @@ p {
                         background-color: #e84c3d;  
                         margin: 5px 0 17px 0;
                         height: 3px;
-                        
                     }
                     .progress-moved .progress-bar2 {
                         border-radius:10px;
                         width: 92%; 
                         background-color: #e84c3d;  
                         margin: 5px 0 17px 0;
-
                         height: 3px;
                     }
                     .progress-moved .progress-bar3 {
@@ -264,7 +255,6 @@ p {
                         background-color: #e84c3d;  
                         margin: 5px 0 17px 0;
                         height: 3px;
-
                     }
                     .progress-moved .progress-bar4 {
                         border-radius:10px;
@@ -272,7 +262,6 @@ p {
                         background-color: #e84c3d;  
                         margin: 5px 0 17px 0;
                         height: 3px;
-
                     }
                 }
             }
@@ -329,21 +318,19 @@ p {
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
-                    gap: 20px;
-
+                    gap: 20px; 
                     p {
                         text-align: left;
                     }
-                }
-
+                } 
                 .image {
                     background-color: #787474;
                     position:relative;   
-                    img {
+                    .h-image {
                         opacity: 0;
                         width: 100%;
                     }
-                    img:hover {
+                    .h-image:hover {
                         opacity: 1;
                         filter: blur(2px);
                         transition: all .25s;
@@ -355,6 +342,9 @@ p {
                         left:50%;   
                         transform:translate(-50%, -50%); 
                         display: none;
+                        .orange-button {
+                            background: #e87e5d;
+                        }
                         button {
                             border-radius: 50%;
                             border: none;
@@ -366,16 +356,72 @@ p {
                                 opacity: 1;
                                 filter: blur(0);
                             }
-                        }           
+                        }
+                    }
+                    .hidden-button:hover .h-image {
+                        opacity: 1;
                     }
                 }
                 .image:hover .hidden-button {
                     display: block;
                 }
-               
             }
         }
     }
-    
+    .pricing {
+        background: #171f23;
+        color: #ffffff;
+        @include flex-column-center;
+        .header {
+            padding: 30px;
+        }
+        .proposition {
+            display: flex;
+            justify-content: center;
+            .price {
+                min-width: 200px;
+                .plan-name {
+                    background: #0e1316;
+                    padding: 10px;
+                    width: 100%;
+                    @include flex-column-center;
+                }
+                .offers {
+                    background: #1f282c;
+                    @include flex-column-center;
+                    text-align: center;
+                    ul {
+                        li {
+                            padding: 10px;
+                            list-style-type: none;
+                        }
+                    }
+                }
+                .price-button {
+                    @include flex-column-center;
+                    background: #1f282c;
+                    padding: 20px;
+                    button {
+                        background-color: #f6744b;
+                        border: none;
+                        color: white;
+                        padding: 15px 45px;
+                        text-align: center;
+                        display: inline-block;
+                        font-size: 16px;
+                        margin: 4px 2px;
+                        cursor: pointer;
+                        border-radius: 2px;
+                    }
+                }
+            }
+            .price:hover { 
+                border: 1px solid #f6744b;
+            }
+            .price:hover .h-c {
+                color: #f6744b;
+            }
+        }
+    }
 }
     
